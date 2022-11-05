@@ -1,0 +1,7 @@
+@layer components{
+  .btn{
+    @apply w-32 bg-primary text-center text-white font-bold p-2 rounded-lg hover:bg-primary-light;
+  }
+
+}
+

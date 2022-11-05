@@ -2,7 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 @import url("layout/_header.scss");
+@import url("layout/_hero.scss");
+@import url("layout/_functions.scss");
+@import url("layout/_road-map.scss");
+@import url("layout/_our-view.scss");
+@import url("layout/_road-map.scss");
+@import url("layout/_reviews.scss");
+@import url("layout/_free-add.scss");
+@import url("layout/_footer.scss");
+@import url("global/_global-components.scss");
+@import url("global/_variables.scss");
 @import "../../node_modules/font-awesome/css/font-awesome.css";
+
+@layer components{
+  .app {
+    @apply h-full;
+  }
+  main{
+    @apply flex flex-col gap-10;
+  }
+}
 
 // header {
 //  width: 100%;

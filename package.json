@@ -33,5 +33,8 @@
     "vite": "^3.1.0"
   },
   "keywords": [],
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "tw-elements": "1.0.0-alpha12"
+  }
 }
