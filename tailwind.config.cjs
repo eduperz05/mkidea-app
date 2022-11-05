@@ -11,7 +11,7 @@ module.exports = {
         "light-gray": "#B0B3B7"
       },
       fontFamily: {
-        lora: "'Lora', serif",
+        inter: "'Inter', serif",
         spaceGrotesk: "'Space Grotesk', serif"
       }
     }
