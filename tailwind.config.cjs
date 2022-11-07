@@ -25,6 +25,9 @@ module.exports = {
       fontFamily: {
         inter: "var(--primary-font)",
         spaceGrotesk: "var(--title-font)"
+      },
+      backgroundImage: {
+        "hero-pattern": "var(--hero-pattern)"
       }
     }
   },
