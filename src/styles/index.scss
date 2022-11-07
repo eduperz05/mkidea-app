@@ -16,39 +16,9 @@
 
 @layer components{
   .app {
-    @apply h-full;
-  }
-  main{
-    @apply flex flex-col gap-10;
+
+    & main{
+      @apply flex flex-col gap-10;
+    }
   }
 }
-
-// header {
-//  width: 100%;
-//  margin: 1rem 0;
-//  nav {
-//   display: flex;
-//   flex-direction: row;
-//   justify-content: space-between;
-
-//   li {
-//    display: inline;
-//    margin: 0 5rem;
-//   }
-//  }
-
-// }
-
-// main {
-
-// }
-
-// footer {
-
-// }
-
-// section {
-// margin: 2rem 0;
-// display: flex;
-// flex-direction: row;
-// }
