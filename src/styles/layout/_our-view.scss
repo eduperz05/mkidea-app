@@ -6,8 +6,8 @@
       @apply flex items-center justify-between gap-x-52;
 
       .card {
-        @apply w-[400px] h-80 p-8 flex flex-col justify-center  items-center  border-2 border-black rounded-2xl;
-        
+        @apply w-[400px] h-80 p-8 flex flex-col justify-center items-center border-2 border-black rounded-2xl;
+
         p {
           @apply text-center text-xl text-primary;
         }

@@ -6,29 +6,25 @@ tercero colores
 */
 
 @layer components {
-  .header{
-   @apply w-full  py-4; 
+  .header {
+    @apply w-full py-4;
 
-   .header-navbar{
-    @apply container mx-auto flex justify-between items-center gap-4 ;
+    .header-navbar {
+      @apply container mx-auto flex justify-between items-center gap-4;
     }
 
-    .navbar-navigation{
-      @apply  flex justify-evenly  gap-x-24 font-bold text-primary ;
+    .navbar-navigation {
+      @apply flex justify-evenly gap-x-24 font-bold text-primary;
     }
-  
-    .nav-item{
-      @apply underline hover:text-primary-lighter;
+
+    .nav-item {
+      @apply underline hover: text-primary-lighter;
     }
-  
-  
-    .nav-log-container{
+
+    .nav-log-container {
       @apply flex gap-x-12;
     }
 
   }
-
-
-
 
 }

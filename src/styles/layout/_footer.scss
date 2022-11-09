@@ -1,27 +1,35 @@
-@layer components{
-  .footer{
-    @apply w-full h-96 flex flex-row justify-around items-center bg-primary bg-cover ; 
-  
-    .footer-section-container{
-      @apply flex flex-col items-start justify-center gap-4;
-      a {
-        @apply text-sm underline text-black-lighter 
-      };
+@layer components {
+  .footer {
+    @apply w-full h-96 flex flex-row justify-around items-center bg-black bg-cover;
 
-      .media-icons-container{
+    .footer-section-container {
+      @apply flex flex-col items-start justify-center gap-4;
+
+      a {
+        @apply text-sm underline text-black-lighter
+      }
+
+      ;
+
+      .media-icons-container {
         @apply flex flex-row items-center justify-between gap-4;
-        i{
+
+        i {
           @apply text-3xl;
         }
+
         .fa-twitter {
           @apply text-blue-500
         }
+
         .fa-instagram {
           @apply text-pink-500
         }
+
         .fa-facebook {
-          @apply  text-white
+          @apply text-white
         }
+
         .fa-linkedin {
           @apply text-blue-400
         }

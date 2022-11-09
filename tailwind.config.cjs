@@ -20,7 +20,6 @@ module.exports = {
         "black-lighter": "var(--black-color-light-extra)",
         "black-dark": "var(--black-color-dark)",
         "black-darker": "var(--black-color-darker)",
-
       },
       fontFamily: {
         inter: "var(--primary-font)",

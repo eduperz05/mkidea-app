@@ -14,10 +14,10 @@
 @import url("global/_variables.scss");
 @import "../../node_modules/font-awesome/css/font-awesome.css";
 
-@layer components{
+@layer components {
   .app {
 
-    & main{
+    & main {
       @apply flex flex-col gap-10;
     }
   }
