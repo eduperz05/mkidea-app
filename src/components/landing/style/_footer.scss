@@ -1,6 +1,6 @@
 @layer components {
   .footer {
-    @apply w-full h-96 flex flex-row justify-around items-center bg-black bg-cover;
+    @apply w-full h-96 flex flex-row justify-around items-center bg-primary bg-cover;
 
     .footer-section-container {
       @apply flex flex-col items-start justify-center gap-4;
