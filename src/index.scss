@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("global/_global-components.scss");
+@import url("global/_variables.scss");
+@import "../node_modules/font-awesome/css/font-awesome.css";
+
+@layer components {
+  .app {
+    @apply flex flex-col h-screen;
+  }
+}

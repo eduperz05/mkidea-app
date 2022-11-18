@@ -4,12 +4,16 @@ module.exports = {
     es2021: true
   },
   extends: [
-    "standard"
+    "@cowcoders/eslint-config/ts"
   ],
+  parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaVersion: "latest",
     sourceType: "module"
   },
+  plugins: [
+    "@typescript-eslint"
+  ],
   rules: {
     quotes: ["error", "double"],
     semi: ["error", "always"],
