@@ -1,9 +1,5 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-@import url("global/_global-components.scss");
-@import url("global/_variables.scss");
-@import "../node_modules/font-awesome/css/font-awesome.css";
+@import url("./global/_global-components.scss");
+@import url("./global/_variables.scss");
 
 @layer components {
   .app {
