@@ -1,7 +1,11 @@
+
 /* eslint-disable quote-props */
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{html,ts}"],
+  content: [
+    "./index.html",
+    "./src/**/*.{vue,js,ts,jsx,tsx}",
+  ],
   theme: {
     extend: {
       colors: {
@@ -25,9 +29,6 @@ module.exports = {
         inter: "var(--primary-font)",
         spaceGrotesk: "var(--title-font)"
       },
-      backgroundImage: {
-        "hero-pattern": "var(--hero-pattern)"
-      }
     }
   },
   plugins: [
