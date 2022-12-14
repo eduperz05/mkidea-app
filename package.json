@@ -14,7 +14,8 @@
   "dependencies": {
     "pinia": "^2.0.26",
     "vue": "^3.2.45",
-    "vue-router": "^4.1.6"
+    "vue-router": "^4.1.6",
+    "tw-elements": "1.0.0-alpha12"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.1.4",
@@ -35,6 +36,7 @@
     "typescript": "~4.7.4",
     "vite": "^3.2.4",
     "vitest": "^0.25.3",
-    "vue-tsc": "^1.0.9"
+    "vue-tsc": "^1.0.9",
+    "sass-loader": "13.2.0"
   }
 }
