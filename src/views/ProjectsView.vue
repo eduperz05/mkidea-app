@@ -1,40 +1,94 @@
 <script lang="ts">
-export default {
+import NavbarComponent from '@/components/NavbarComponent.vue';
+import SidebarComponent from '@/components/SidebarComponent.vue';
 
+export default {
+    components: { NavbarComponent, SidebarComponent }
 }
 </script>
 
 <template>
     <div>
-        <div class="pheader-Container">
-            <h2>My Projects</h2>
-        </div>
-        <div class="project-Column-Container">
-            <div class="project-Organization">
-                <p>Project Name</p>
-                <p>Product Owner Name</p>
-                <p>Date</p>
-                <p>Completed</p>
-            </div>
-            <div class="project-List">
-                <p>Project 1</p>
-                <p>Product Owner</p>
-                <p>Date</p>
-                <input type="checkbox" id="Project1" name="Check1" value="Check">
-            </div>
-            <div class="project-List2">
-                <p>Project 2</p>
-                <p>Product Owner</p>
-                <p>Date</p>
-                <input type="checkbox" id="Project2" name="Check2" value="Check">
-            </div>
-            <div class="add-Button">
-                <button><a href="">Add</a></button>
+        <NavbarComponent />
+        <div class="projects-container">
+            <SidebarComponent />
+            <div class="projects-section-container">
+                <div class="flex flex-col w-full">
+                    <div class="projects-title-container">
+                        <h2 class="projects-title">My Projects</h2>
+                    </div>
+                    <div class="project-tables">
+                        <div class="project-organization-header">
+                            <p>Project Name</p>
+                            <p>Product Owner Name</p>
+                            <p>Date</p>
+                            <p>Completed</p>
+                        </div>
+                        <div class="table-columns">
+                            <div class="project-organization-column">
+                                <p>Project 1</p>
+                                <p>Product Owner</p>
+                                <p>--/--/--</p>
+                                <input type="checkbox">
+                            </div>
+                            <div class="project-organization-column">
+                                <p>Project 2</p>
+                                <p>Product Owner</p>
+                                <p>--/--/--</p>
+                                <input type="checkbox">
+                            </div>
+                            <div class="project-organization-column">
+                                <p>Project 3</p>
+                                <p>Product Owner</p>
+                                <p>--/--/--</p>
+                                <input type="checkbox">
+                            </div>
+                            <div class="project-organization-column">
+                                <p>Project 4</p>
+                                <p>Product Owner</p>
+                                <p>--/--/--</p>
+                                <input type="checkbox">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="add-button-container">
+                        <button class="add-button"><a href="">+ Add</a></button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </template>
 
 <style>
-
+.projects-container {
+    @apply w-full flex;
+    .projects-section-container {
+        @apply w-full flex gap-4 border-r-2 border-b-2 border-slate-400 rounded-br-lg;
+        .projects-title-container {
+            @apply flex items-center justify-center mb-5 p-5;
+            .projects-title {
+                @apply text-center font-spaceGrotesk text-3xl font-bold tracking-wide;
+            }
+        }
+        .project-tables {
+            @apply flex flex-col;
+            .project-organization-header {
+                @apply flex justify-center gap-48 bg-primary py-2 text-white;
+            }
+            .table-columns {
+                @apply flex flex-col items-center;
+                .project-organization-column {
+                    @apply w-full flex justify-center gap-[225px] border-t-2 border-slate-400 py-2;
+                }
+                .project-organization-column:last-child {
+                    @apply border-b-2 border-slate-400;
+                }
+            }
+        }
+        .add-button-container {
+            @apply w-full flex bg-[#c8c0ff83] px-5 py-2 text-primary-light hover:text-primary;
+        }
+    }
+}
 </style>
