@@ -17,7 +17,7 @@ export default {
                     <div class="projects-title-container">
                         <h2 class="projects-title">My Projects</h2>
                     </div>
-                    <div class="project-tables">
+                    <div class="project-table">
                         <div class="project-organization-header">
                             <p>Project Name</p>
                             <p>Product Owner Name</p>
@@ -27,27 +27,27 @@ export default {
                         <div class="table-columns">
                             <div class="project-organization-column">
                                 <p>Project 1</p>
-                                <p>Product Owner</p>
-                                <p>--/--/--</p>
-                                <input type="checkbox">
-                            </div>
-                            <div class="project-organization-column">
                                 <p>Project 2</p>
-                                <p>Product Owner</p>
-                                <p>--/--/--</p>
-                                <input type="checkbox">
-                            </div>
-                            <div class="project-organization-column">
                                 <p>Project 3</p>
-                                <p>Product Owner</p>
-                                <p>--/--/--</p>
-                                <input type="checkbox">
+                                <p>Project 4</p>
                             </div>
                             <div class="project-organization-column">
-                                <p>Project 4</p>
                                 <p>Product Owner</p>
+                                <p>Product Owner</p>
+                                <p>Product Owner</p>
+                                <p>Product Owner</p>
+                            </div>
+                            <div class="project-organization-column">
                                 <p>--/--/--</p>
-                                <input type="checkbox">
+                                <p>--/--/--</p>
+                                <p>--/--/--</p>
+                                <p>--/--/--</p>
+                            </div>
+                            <div class="project-organization-column">
+                                <p><input type="checkbox" class="checkbox-item"></p>
+                                <p><input type="checkbox" class="checkbox-item"></p>
+                                <p><input type="checkbox" class="checkbox-item"></p>
+                                <p><input type="checkbox" class="checkbox-item"></p>
                             </div>
                         </div>
                     </div>
@@ -63,29 +63,42 @@ export default {
 <style>
 .projects-container {
     @apply w-full flex;
+
     .projects-section-container {
         @apply w-full flex gap-4 border-r-2 border-b-2 border-slate-400 rounded-br-lg;
+
         .projects-title-container {
             @apply flex items-center justify-center mb-5 p-5;
+
             .projects-title {
                 @apply text-center font-spaceGrotesk text-3xl font-bold tracking-wide;
             }
         }
-        .project-tables {
-            @apply flex flex-col;
+
+        .project-table {
+            @apply grid items-center;
+
             .project-organization-header {
-                @apply flex justify-center gap-48 bg-primary py-2 text-white;
+                @apply grid grid-cols-4 text-center bg-primary py-3 text-white;
             }
+
             .table-columns {
-                @apply flex flex-col items-center;
+                @apply grid grid-cols-4 text-center;
+
                 .project-organization-column {
-                    @apply w-full flex justify-center gap-[225px] border-t-2 border-slate-400 py-2;
+                    @apply grid grid-cols-1 text-sm;
                 }
-                .project-organization-column:last-child {
-                    @apply border-b-2 border-slate-400;
+
+                .project-organization-column p {
+                    @apply grid py-3 border-b-2 border-slate-400;
+                }
+
+                .checkbox-item {
+                    @apply accent-primary;
                 }
             }
         }
+
         .add-button-container {
             @apply w-full flex bg-[#c8c0ff83] px-5 py-2 text-primary-light hover:text-primary;
         }

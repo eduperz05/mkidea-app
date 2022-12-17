@@ -25,19 +25,19 @@ export default {
                         <p>About you...</p>
                     </div>
                 <div class="profile-info-container">
-                    <div class="first-name">
+                    <div class="profile-info">
                         <p><strong>First Name</strong></p>
                         <p>John</p>
                     </div>
-                    <div class="last-name">
+                    <div class="profile-info">
                         <p><strong>Last Name</strong></p>
                         <p>Smith</p>
                     </div>
-                    <div class="email">
+                    <div class="profile-info">
                         <p><strong>Email</strong></p>
                         <p>johnsmith@johnsmith.com</p>
                     </div>
-                    <div class="phone-number">
+                    <div class="profile-info">
                         <p><strong>Phone Number</strong></p>
                         <p>957477079</p>
                     </div>
@@ -54,40 +54,50 @@ export default {
                 <div class="social-media">
                     <p>Social Media</p>
                 </div>
-                <div class="trello">
+                <div class="media-container">
                     <div class="icon-media-container">
                         <img src="/img/trello.svg" alt="" class="icon">
                         <p>Trello</p>
                     </div>
-                    <p>John Smith</p>
+                    <div class="account">
+                        <p>John Smith</p>
+                    </div>
                 </div>
-                <div class="github">
+                <div class="media-container">
                     <div class="icon-media-container">
                         <img src="/img/github.svg" alt="" class="icon">
                         <p>Github</p>
                     </div>
-                    <p>John Smith the best developer</p>
+                    <div class="account">
+                        <p>John Smith the best developer</p>
+                    </div>
                 </div>
-                <div class="linkedin">
+                <div class="media-container">
                     <div class="icon-media-container">
                         <img src="/img/linkedin.svg" alt="" class="icon">
                         <p>LinkedIn</p>
                     </div>
-                    <p>John Smith</p>
+                    <div class="account">
+                        <p>John Smith</p>
+                    </div>
                 </div>
-                <div class="facebook">
+                <div class="media-container">
                     <div class="icon-media-container">
                         <img src="/img/facebook.svg" alt="" class="icon">
                         <p>Facebook</p>
                     </div>
-                    <p>Sr. Smith</p>
+                    <div class="account">
+                        <p>Sr. Smith</p>
+                    </div>
                 </div>
-                <div class="whatsapp">
+                <div class="media-container">
                     <div class="icon-media-container">
                         <img src="/img/whatsapp.svg" alt="" class="icon">
                         <p>WhatsApp</p>
-                    </div>    
+                    </div>
+                    <div class="account">
                         <p>+34666777420</p>
+                    </div>
                 </div>
             </div>
             </div>
@@ -106,60 +116,39 @@ export default {
                 @apply w-32 h-32 rounded-full border-2 border-slate-400;
             }
         }
+
         .name-surname {
             @apply text-2xl font-bold text-secondary-dark;
         }
     }
-    .profile-info-container{
-        @apply bg-white border-l-2 border-b-2 border-slate-400 rounded-bl-lg;
-        .first-name {
-            @apply flex gap-[78px] px-10 py-3;
+
+    .profile-info-container {
+        @apply grid bg-white border-l-2 border-b-2 border-slate-400 rounded-bl-lg;
+        .profile-info {
+            @apply grid grid-cols-2 px-10 border-b-2 border-slate-400 items-center;
         }
-    
-        .last-name {
-            @apply border-t-2 border-b-2 border-slate-400 flex gap-20 px-10 py-3;
-        }
-    
-        .email {
-            @apply flex gap-[120px] px-10 py-3;
-        }
-    
-        .phone-number{
-            @apply border-t-2 border-b-2 border-slate-400 flex gap-12 px-10 py-3;
-        }
+
         .about-you {
-            @apply flex flex-col gap-2 px-10 py-3;
+            @apply grid px-10 py-3;
         }
     }
-    
+
     .social-media-container{
-        @apply bg-white rounded-br-lg;
+        @apply bg-white rounded-br-lg border-b-2 border-slate-400;
         .social-media {
             @apply bg-[#61eec6] px-10 py-3 text-[18px] font-medium;
         }
-        .icon-media-container {
-            @apply flex gap-12;
-        }
-        .icon {
-            @apply w-5 h-5;
-        }
-        .trello {
-            @apply border-t-2 border-b-2 border-slate-400 flex gap-20 px-10 py-3;
-        }
-        .github {
-            @apply border-b-2 border-slate-400 flex gap-[72px] px-10 py-3;
-        }
-        .linkedin {
-            @apply border-b-2 border-slate-400 flex gap-[60px] px-10 py-3;
-        }
-        .facebook {
-            @apply border-b-2 border-slate-400 flex gap-[53px] px-10 py-3;
-        }
-        .whatsapp{
-            @apply border-b-2 border-slate-400 flex gap-[44px] px-10 py-3 rounded-br-lg;
+
+        .media-container {
+            @apply px-12 grid grid-cols-2 text-left border-t-2 border-slate-400 py-3;
+            .icon-media-container {
+                @apply flex justify-start gap-12;
+            }
+
+            .icon {
+                @apply w-7 h-7;
+            }
         }
     }
-    
-
 }
 </style>

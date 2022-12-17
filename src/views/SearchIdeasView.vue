@@ -111,14 +111,14 @@
     }
         }
     .search-results {
-        @apply w-full flex flex-col border-b-0 border-2 border-slate-400 rounded-lg mt-2;
+        @apply border-b-0 border-2 border-slate-400 rounded-lg mt-2;
         li {
-            @apply border-b-2 border-slate-400 flex gap-[72px] px-10 py-3;
+            @apply border-b-2 border-slate-400 px-10 py-3;
         }
         li:last-child {
             @apply rounded-b-lg;
         }
     }
-    
+
 }
 </style>

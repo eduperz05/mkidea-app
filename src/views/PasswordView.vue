@@ -25,15 +25,15 @@ export default {
                         <div class="password-inputs">
                             <div class="current-password">
                                 <label for="">Current Password</label>
-                                <input type="text" placeholder="*********************">
+                                <input type="text" placeholder="****************">
                             </div>
                             <div class="new-password">
                                 <label for="">New Password</label>
-                                <input type="text" placeholder="*********************">
+                                <input type="text" placeholder="****************">
                             </div>
                             <div class="confirm-new">
                                 <label for="">Confirm New Password</label>
-                                <input type="text" placeholder="*********************">
+                                <input type="text" placeholder="****************">
                             </div>
                             <div class="save-password-btn-container">
                                 <button class="save-password-btn btn"><a href="">Save Password</a></button>
@@ -57,40 +57,39 @@ export default {
     .password-title {
         @apply text-3xl font-spaceGrotesk text-center font-bold mb-2;
     }
+
     .password-subtext {
         @apply flex flex-col items-center text-slate-600 mb-5;
     }
 
     .change-password-content {
-        @apply flex items-center justify-center;
-        .password-inputs {
-            @apply flex flex-col;
-            .current-password, .new-password, .confirm-new {
-                @apply flex border-b-0 border-2 border-slate-400 py-3 px-10;
+        @apply grid grid-cols-2 items-center;
+        .current-password, .new-password, .confirm-new {
+                @apply grid grid-cols-2 border-b-0 border-2 border-slate-400 py-3 px-10;
             }
-            .current-password {
-                @apply flex gap-20 rounded-t-lg;
+
+        .current-password {
+            @apply rounded-t-lg;
+        }
+
+        .confirm-new {
+                @apply border-b-2 border-slate-400 rounded-b-lg mb-5;
             }
-            .new-password {
-                @apply flex gap-[103px];
-            }
-            .confirm-new {
-                @apply gap-[38px] border-b-2 border-slate-400 rounded-b-lg mb-10;
-            }
-            .save-password-btn-container {
+
+        .save-password-btn-container {
                 @apply flex items-center justify-center;
                 .save-password-btn {
                     @apply w-48;
                 }
             }
-            input {
-                @apply px-2;
+        input {
+            @apply px-2;
             }
         }
+
         .password-hero {
             @apply h-[450px];
         }
         }
     }
-}
 </style>

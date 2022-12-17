@@ -17,18 +17,19 @@ export default {
                     <div class="project-inftools-container flex-col w-full h-full">
                         <div class="project-info-container ">
                             <div class="project-image-container">
-                                <img src="/img/ppic.webp" alt="" class="profile-img">
+                                <img src="/img/project.png" alt="" class="profile-img">
                             </div>
                             <div class="info-title">
                                 <h2>Project Name</h2>
                             </div>
                             <div class="project-info">
-                                <div class="status"><p>Status: Completed</p><img src="/img/check.svg" class="check-icon"></div>
+                                <div class="status">
+                                    <p>Status: Completed</p><img src="/img/check.svg" class="check-icon">
+                                </div>
                                 <p>Owner: Eduardo Smith</p>
                                 <p>Created/Updated</p>
                                 <p>Participants: 2</p>
                             </div>
-                            
                         </div>
                         <div class="project-description-container">
                             <div class="description-title">
@@ -36,9 +37,11 @@ export default {
                             </div>
                             <div class="description-text">
                                 <p>
-                                    The project consists of a webpage that can track <strong>how many hours of sleep</strong> you had.
+                                    The project consists of a webpage that can track <strong>how many hours of
+                                        sleep</strong> you had.
                                     This way you can track if you're sleeping well or not.
-                                    It's also a way to <strong>change your behaviour</strong> in case you're sleeping bad.
+                                    It's also a way to <strong>change your behaviour</strong> in case you're sleeping
+                                    bad.
                                 </p>
                             </div>
                             <div class="tools-title">
@@ -125,15 +128,19 @@ export default {
                                     <p>Role</p>
                                     <p>Contact</p>
                                 </div>
-                                <div class="member">
-                                    <p>John Smith</p>
-                                    <p>FullStack</p>
-                                    <p>johnsmith@gmail.com</p>
-                                </div>
-                                <div class="member">
-                                    <p>Lucy Smith</p>
-                                    <p>Frontend</p>
-                                    <p>lucysmith@gmail.com</p>
+                                <div class="members">
+                                    <div class="members-column">
+                                        <p>John Smith</p>
+                                        <p>Lucy Smith</p>
+                                    </div>
+                                    <div class="members-column">
+                                        <p>FullStack</p>
+                                        <p>Frontend</p>
+                                    </div>
+                                    <div class="members-column">
+                                        <p>johnsmith@gmail.com</p>
+                                        <p>lucysmith@gmail.com</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -162,69 +169,72 @@ export default {
 
                     .status {
                         @apply flex justify-center gap-2;
+
                         .check-icon {
                             @apply w-5;
                         }
                     }
                 }
-                
+
                 .project-image-container {
-                    @apply flex w-full items-center justify-center rounded-full mb-6 h-32;
+                    @apply flex w-full items-center justify-center rounded-full mb-6;
 
                     .profile-img {
-                        @apply flex w-32 h-32 rounded-full border-2 border-slate-400 bg-secondary;
+                        @apply w-32 h-32 rounded-full border-2 border-slate-400 bg-secondary;
                     }
 
                 }
-                .info-title {
-                        @apply text-2xl font-bold text-secondary-dark mb-2;
-                    }
-            }
-                        .project-description-container {
-                            @apply h-full w-full text-center font-spaceGrotesk tracking-wide border-r-2 border-slate-400 py-3 flex flex-col gap-3 bg-white;
-            
-                            .description-title {
-                                @apply text-3xl font-bold;
-                            }
-            
-                            .description-text {
-                                @apply w-full flex items-center justify-center px-10;
 
-                            }
-            
-                            .tools-title {
-                                @apply font-spaceGrotesk text-2xl font-bold;
-                            }
-            
-                            .tools {
-                                @apply flex flex-col gap-2;
-            
-                                .tool {
-                                    @apply flex justify-center list-none gap-2;
-                                }
-            
-                                .tool-icon {
-                                    @apply w-5;
-                                }
-                            }
-            
-                        }
-            
+                .info-title {
+                    @apply text-2xl font-bold text-secondary-dark mb-2;
+                }
+            }
+
+            .project-description-container {
+                @apply h-full w-full text-center font-spaceGrotesk tracking-wide border-r-2 border-slate-400 py-3 flex flex-col gap-3 bg-white;
+
+                .description-title {
+                    @apply text-3xl font-bold;
+                }
+
+                .description-text {
+                    @apply w-full flex items-center justify-center px-10;
+
+                }
+
+                .tools-title {
+                    @apply font-spaceGrotesk text-2xl font-bold;
+                }
+
+                .tools {
+                    @apply flex flex-col gap-2;
+
+                    .tool {
+                        @apply flex justify-center list-none gap-2;
+                    }
+
+                    .tool-icon {
+                        @apply w-5;
+                    }
+                }
+
+            }
+
         }
 
         .project-group-container {
             @apply flex flex-col gap-4 p-4;
-        
+
             .project-tools-container {
                 @apply h-full w-full text-center font-spaceGrotesk tracking-wide border-2 border-slate-400 rounded-lg bg-white;
 
                 .resources-title {
                     @apply text-3xl font-bold mb-2 mt-2;
                 }
-                
+
                 .media-container {
                     @apply px-12 grid grid-cols-2 text-left border-t-2 border-slate-400 py-3;
-                    
+
                     .icon-media-container {
                         @apply flex justify-start gap-12;
                     }
@@ -233,11 +243,8 @@ export default {
                         @apply w-7 h-7;
                     }
                 }
-
-
-
             }
-            
+
 
             .project-members-container {
                 @apply h-full w-full text-center font-spaceGrotesk tracking-wide border-2 border-slate-400 rounded-lg bg-white;
@@ -245,17 +252,20 @@ export default {
                 .members-title {
                     @apply font-spaceGrotesk text-3xl font-bold py-4;
                 }
-                
+
                 .members-content {
-                    @apply grid grid-cols-1 items-center;
+                    @apply grid items-center;
+
                     .members-header {
-                        @apply w-full flex justify-around py-3 bg-slate-200 font-bold;
+                        @apply grid grid-cols-3 py-3 bg-slate-200 font-bold;
                     }
-                    .member {
-                        @apply w-full flex justify-around text-sm border-t-2 border-b-2 border-slate-400 py-3;
-                    }
-                    .member:last-child {
-                        @apply border-t-0;
+
+                    .members {
+                        @apply grid grid-cols-3;
+
+                        .members-column p {
+                            @apply grid text-sm border-b-2 border-slate-400 py-3;
+                        }
                     }
                 }
             }
