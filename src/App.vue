@@ -9,10 +9,10 @@ import ProjectPageView from '@/views/ProjectPageView.vue';
 <template>
   <div class="app">
     <!-- <ProfileView /> -->
-    <!-- <SearchIdeasView /> -->
+    <SearchIdeasView />
     <!-- <PasswordView /> -->
-    <!--<ProjectsView />-->
-    <ProjectPageView />
+    <!-- <ProjectsView /> -->
+    <!-- <ProjectPageView /> -->
   </div>
 
 </template>
@@ -21,6 +21,6 @@ import ProjectPageView from '@/views/ProjectPageView.vue';
 @import "@/index.scss";
 
 .app {
-  @apply w-[70%];
+  @apply w-full h-full;
 }
 </style>

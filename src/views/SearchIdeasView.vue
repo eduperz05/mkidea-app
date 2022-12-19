@@ -66,17 +66,17 @@
 .start-project-container {
     @apply flex border-r-2 border-slate-400 rounded-br-lg;
     .start-project-content {
-        @apply w-full flex flex-col p-5 border-b-2 border-slate-400 rounded-br-lg;
+        @apply w-full flex flex-col border-b-2 border-slate-400 rounded-br-lg;
         .start-title{
-            @apply w-full flex items-center justify-center mb-5 font-spaceGrotesk text-3xl font-bold text-primary tracking-wide;
+            @apply w-full flex items-center justify-center font-spaceGrotesk text-3xl font-bold tracking-wide bg-white py-5;
         }
         .start-project {
-            @apply w-full flex justify-center gap-12;
+            @apply w-full flex justify-center gap-12 px-10 py-5;
             .tutorial-block {
                 @apply flex flex-col gap-2;
             }
             .start-sub-title {
-                @apply text-center bg-secondary-light rounded-md shadow-md p-1;
+                @apply text-center bg-primary-lighter rounded-md shadow-md p-1;
             }
             .start-sub-text {
                 @apply flex flex-col text-center leading-6;
@@ -88,7 +88,7 @@
         .search-ideas-title {
             @apply flex flex-col items-center gap-1.5;
             .search-title {
-                @apply w-full flex items-center justify-center font-spaceGrotesk text-3xl font-bold text-primary tracking-wide;
+                @apply w-full flex items-center justify-center font-spaceGrotesk text-3xl font-bold tracking-wide;
             }
             .search-text {
                 @apply text-slate-600 mb-5;
@@ -111,9 +111,12 @@
     }
         }
     .search-results {
-        @apply border-b-0 border-2 border-slate-400 rounded-lg mt-2;
+        @apply px-10 mt-2;
         li {
-            @apply border-b-2 border-slate-400 px-10 py-3;
+            @apply border-t-0 border-2 border-slate-400 px-10 py-3;
+        }
+        li:first-child {
+            @apply border-t-2 border-slate-400 rounded-t-lg;
         }
         li:last-child {
             @apply rounded-b-lg;

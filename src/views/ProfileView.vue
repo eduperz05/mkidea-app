@@ -14,13 +14,16 @@ export default {
         <NavbarComponent />
         <div class="view-container">
             <SidebarComponent />
-            <div class="flex flex-col gap-4 bg-secondary-light border-r-2 border-slate-400 rounded-br-lg">
+            <div class="flex flex-col gap-4 bg-secondary-light py-2 px-5">
                 <div class="flex gap-4">
                     <div class="profile-container">
                         <div class="image-container">
-                            <img src="/img/ppic.webp" alt="" class="profile-img">
+                            <img src="/img/ppic.jpeg" alt="" class="profile-img">
                         </div>
-                        <p class="name-surname">John Smith</p>
+                        <div class="name-surname">
+                            <p>John Smith</p>
+                            <a><img src="/img/edit.png" alt="edit icon" class="edit-icon"></a>
+                        </div>
                         <p>Profession</p>
                         <p>About you...</p>
                     </div>
@@ -109,21 +112,24 @@ export default {
 .view-container {
     @apply flex w-full;
     .profile-container{
-        @apply w-[100%] h-[400px] flex flex-col items-center justify-center gap-2 bg-white border-r-2 border-b-2 border-slate-400 rounded-br-lg;
+        @apply w-full h-[450px] flex flex-col items-center justify-center gap-2 bg-white border-2 border-slate-400 rounded-lg;
         .image-container {
-            @apply bg-secondary rounded-full mb-6;
+            @apply rounded-full mb-6;
             .profile-img {
-                @apply w-32 h-32 rounded-full border-2 border-slate-400;
+                @apply w-32 h-32 rounded-full border-2 border-secondary-light;
             }
         }
 
         .name-surname {
-            @apply text-2xl font-bold text-secondary-dark;
+            @apply flex items-center justify-center gap-2 text-2xl font-bold text-secondary-dark;
+            .edit-icon {
+                @apply w-7;
+            }
         }
     }
 
     .profile-info-container {
-        @apply grid bg-white border-l-2 border-b-2 border-slate-400 rounded-bl-lg;
+        @apply grid bg-white border-2 border-slate-400 rounded-lg;
         .profile-info {
             @apply grid grid-cols-2 px-10 border-b-2 border-slate-400 items-center;
         }
@@ -134,13 +140,13 @@ export default {
     }
 
     .social-media-container{
-        @apply bg-white rounded-br-lg border-b-2 border-slate-400;
+        @apply bg-white rounded-lg;
         .social-media {
-            @apply bg-[#61eec6] px-10 py-3 text-[18px] font-medium;
+            @apply bg-secondary px-10 py-2 text-[18px] border-b-0 border-2 border-slate-400 rounded-t-lg font-spaceGrotesk text-3xl font-bold tracking-wide;
         }
 
         .media-container {
-            @apply px-12 grid grid-cols-2 text-left border-t-2 border-slate-400 py-3;
+            @apply px-12 grid grid-cols-2 text-left border-b-0 border-2 border-slate-400 py-3;
             .icon-media-container {
                 @apply flex justify-start gap-12;
             }
@@ -148,6 +154,10 @@ export default {
             .icon {
                 @apply w-7 h-7;
             }
+        }
+
+        .media-container:last-child {
+            @apply border-b-2 rounded-b-lg;
         }
     }
 }

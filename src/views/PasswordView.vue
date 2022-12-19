@@ -10,10 +10,10 @@ export default {
 <template>
     <div>
         <NavbarComponent />
-        <div class="container">
+        <div class="general-container">
             <SidebarComponent />
             <div class="change-password-section">
-                <div class="flex flex-col gap-4">
+                <div class="flex flex-col gap-4 w-full">
                     <div class="password-title-container">
                         <h1 class="password-title">Change Password</h1>
                         <div class="password-subtext">
@@ -50,22 +50,22 @@ export default {
 </template>
 
 <style>
-.container {
+.general-container {
     @apply flex w-full;
     .change-password-section {
-        @apply w-full flex flex-col gap-4 border-r-2 border-b-2 border-slate-400 rounded-br-lg p-5;
+        @apply w-full flex flex-col rounded-br-lg bg-white items-center;
     .password-title {
-        @apply text-3xl font-spaceGrotesk text-center font-bold mb-2;
+        @apply text-3xl font-spaceGrotesk text-center font-bold py-5;
     }
 
     .password-subtext {
-        @apply flex flex-col items-center text-slate-600 mb-5;
+        @apply flex flex-col items-center text-slate-600 py-3 bg-white;
     }
 
     .change-password-content {
-        @apply grid grid-cols-2 items-center;
+        @apply grid grid-cols-2 items-center mx-auto;
         .current-password, .new-password, .confirm-new {
-                @apply grid grid-cols-2 border-b-0 border-2 border-slate-400 py-3 px-10;
+                @apply grid grid-cols-2 border-b-0 border-2 border-slate-400 py-3 px-10 bg-white;
             }
 
         .current-password {

@@ -8,7 +8,7 @@ export default {
     <div class="navbar-container">
         <nav class="navbar">
             <div class="logo-container">
-                <a href="/"><img src="/img/Logo.png" class="logo" alt="brand-logo"></a>
+                <a href="/"><img src="/img/logo.png" class="logo" alt="brand-logo"></a>
                 <a href="/">
                     <p class="brand-name">MKIDEA</p>
                 </a>
@@ -18,7 +18,7 @@ export default {
                 <img src="/img/search.svg" class="search-icon"/>
             </div>
             <div class="ppic-container">
-                <img src="/img/ppic.webp" alt="" class="ppic">
+                <img src="/img/ppic.jpeg" alt="" class="ppic">
             </div>
         </nav>
     </div>
@@ -28,16 +28,17 @@ export default {
 @import "@/index.scss";
 
     .navbar {
-        @apply h-24 px-16 py-4 flex items-center justify-between bg-primary rounded-tr-lg rounded-tl-lg border-b-2 border-slate-400;
+        @apply h-[12vh] px-16 flex items-center justify-between bg-primary border-b-2 border-slate-400;
 
         .logo-container {
             @apply flex items-center justify-center gap-2;
 
             .logo {
                 @apply w-14 max-sm:w-12;
+                filter: drop-shadow(1px 1px 0 black) drop-shadow(-1px -1px 0 black);
             }
             .brand-name {
-                @apply text-2xl font-spaceGrotesk text-primary font-bold;
+                @apply text-2xl font-spaceGrotesk text-white font-bold;
             }
         }
         .input-container {
@@ -50,7 +51,7 @@ export default {
             }
         }
         .ppic-container {
-            @apply flex items-center justify-center bg-secondary border-slate-400 border-2 rounded-full;
+            @apply flex items-center justify-center border-secondary-light border-2 rounded-full;
             .ppic {
                 @apply w-14 h-14 rounded-full;
             }

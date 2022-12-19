@@ -21,6 +21,7 @@ export default {
                             </div>
                             <div class="info-title">
                                 <h2>Project Name</h2>
+                                <a><img src="/img/edit.png" alt="edit icon" class="edit-icon"></a>
                             </div>
                             <div class="project-info">
                                 <div class="status">
@@ -64,13 +65,13 @@ export default {
                         </div>
                     </div>
                 </div>
-                <div class="flex flex-col w-[60%]">
+                <div class="flex flex-col w-[60%] px-14">
                     <div class="project-group-container flex-col w-full h-full">
                         <div class="project-tools-container">
                             <div class="resources-title">
                                 <h2>Project Resources</h2>
                             </div>
-                            <p class="mb-2">This is the list of resources that we are using:
+                            <p class="py-2">This is the list of resources that we are using:
                             </p>
                             <div class="media-container">
                                 <div class="icon-media-container">
@@ -153,10 +154,10 @@ export default {
 
 <style>
 .project-page-container {
-    @apply w-full flex;
+    @apply w-full h-full flex;
 
     .project-section-container {
-        @apply w-full flex border-r-2 border-b-2 border-slate-400 rounded-br-lg bg-secondary-light;
+        @apply w-full flex bg-secondary-light;
 
         .project-inftools-container {
             @apply flex items-center justify-around;
@@ -186,7 +187,10 @@ export default {
                 }
 
                 .info-title {
-                    @apply text-2xl font-bold text-secondary-dark mb-2;
+                    @apply flex items-center justify-center gap-2 text-2xl font-bold text-secondary-dark mb-2;
+                    .edit-icon {
+                        @apply w-7;
+                    }
                 }
             }
 
@@ -194,7 +198,7 @@ export default {
                 @apply h-full w-full text-center font-spaceGrotesk tracking-wide border-r-2 border-slate-400 py-3 flex flex-col gap-3 bg-white;
 
                 .description-title {
-                    @apply text-3xl font-bold;
+                    @apply text-3xl font-bold py-4;
                 }
 
                 .description-text {
@@ -223,13 +227,13 @@ export default {
         }
 
         .project-group-container {
-            @apply flex flex-col gap-4 p-4;
+            @apply flex flex-col gap-4 py-4;
 
             .project-tools-container {
                 @apply h-full w-full text-center font-spaceGrotesk tracking-wide border-2 border-slate-400 rounded-lg bg-white;
 
                 .resources-title {
-                    @apply text-3xl font-bold mb-2 mt-2;
+                    @apply text-3xl font-bold py-4 bg-primary-lighter;
                 }
 
                 .media-container {
@@ -250,7 +254,7 @@ export default {
                 @apply h-full w-full text-center font-spaceGrotesk tracking-wide border-2 border-slate-400 rounded-lg bg-white;
 
                 .members-title {
-                    @apply font-spaceGrotesk text-3xl font-bold py-4;
+                    @apply font-spaceGrotesk text-3xl font-bold py-4 bg-primary-lighter;
                 }
 
                 .members-content {
