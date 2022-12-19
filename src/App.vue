@@ -1,20 +1,16 @@
 <script setup lang="ts">
-import ProfileView from '@/views/ProfileView.vue';
-import PasswordView from '@/views/PasswordView.vue';
-import SearchIdeasView from '@/views/SearchIdeasView.vue';
-import ProjectsView from './views/ProjectsView.vue';
-import ProjectPageView from '@/views/ProjectPageView.vue';
+  import NavbarComponent from '@/components/NavbarComponent.vue';
+  import SidebarComponent from '@/components/SidebarComponent.vue';
 </script>
 
 <template>
   <div class="app">
-    <!-- <ProfileView /> -->
-    <SearchIdeasView />
-    <!-- <PasswordView /> -->
-    <!-- <ProjectsView /> -->
-    <!-- <ProjectPageView /> -->
+    <NavbarComponent />
+    <div class="app-container">
+      <SidebarComponent />
+      <router-view></router-view>
+    </div>
   </div>
-
 </template>
 
 <style lang="scss">
@@ -22,5 +18,8 @@ import ProjectPageView from '@/views/ProjectPageView.vue';
 
 .app {
   @apply w-full h-full;
+  .app-container {
+    @apply w-full flex;
+  }
 }
 </style>
