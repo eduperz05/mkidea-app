@@ -1,7 +1,12 @@
+
 /* eslint-disable quote-props */
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{html,ts}"],
+  content: [
+    "./index.html",
+    "./src/**/*.{vue,js,ts,jsx,tsx}",
+    './node_modules/tw-elements/dist/js/**/*.js'
+  ],
   theme: {
     extend: {
       colors: {
@@ -25,12 +30,9 @@ module.exports = {
         inter: "var(--primary-font)",
         spaceGrotesk: "var(--title-font)"
       },
-      backgroundImage: {
-        "hero-pattern": "var(--hero-pattern)"
-      }
     }
   },
   plugins: [
-    require("tw-elements/dist/plugin")
+    require('tw-elements/dist/plugin')
   ]
 };

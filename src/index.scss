@@ -1,12 +1,14 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-@import url("global/_global-components.scss");
-@import url("global/_variables.scss");
-@import "../node_modules/font-awesome/css/font-awesome.css";
+@import url("./global/_global-components.scss");
+@import url("./global/_variables.scss");
 
 @layer components {
-  .app {
-    @apply flex flex-col h-screen;
+  * {
+    @apply m-0 p-0 box-border;
+  }
+  html, body {
+    @apply w-full h-full;
+  }
+  #app {
+    @apply w-full h-screen;
   }
 }
