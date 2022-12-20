@@ -22,7 +22,7 @@ export default {
 
 <style>
 .sidenav-container {
-    @apply min-w-[240px] bg-primary-lighter border-r-2 border-slate-400 px-10 py-8 h-[88vh] flex flex-col justify-between;
+    @apply min-w-[240px] min-h-[88vh] bg-primary-lighter border-r-2 border-slate-400 px-10 py-8 flex flex-col justify-between;
         .sidenav-items {
             @apply flex flex-col;
             .items {
