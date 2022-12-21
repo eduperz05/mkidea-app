@@ -38,6 +38,7 @@
     "vitest": "^0.25.3",
     "vue-tsc": "^1.0.9",
     "sass-loader": "13.2.0",
-    "vue-types": "5.0.1"
+    "vue-types": "5.0.1",
+    "@cowcoders/eslint-config": "2.0.0"
   }
 }

@@ -1,7 +1,11 @@
 <script lang="ts">
+    import SearchContainer from '@/components/SearchComponents/SearchContainer.vue';
     export default {
-        name: "SearchIdeasView"
-}
+        name: "SearchIdeasView",
+        components: {
+            SearchContainer
+        },
+    }
 </script>
 
 <template>
@@ -33,29 +37,13 @@
                 </div>
             </div>
             <div class="start-btn-container">
-                <button class="btn">Start</button>
+                <button class="btn"><router-link to="/projects">Start</router-link></button>
             </div>
             <div class="search-ideas-title">
                 <h1 class="search-title">Search for Ideas</h1>
                 <p class="search-text">Type a keyword to search for an idea related to it.</p>
             </div>
-            <div class="search-input-section">
-                <div class="keyword">
-                    <input type="text" placeholder="Write your keyword here" class="keyword-input">
-                </div>
-                <div class="search-button">
-                    <button class="search-btn btn">Search</button>
-                </div>
-            </div>
-            <div class="search-results">
-                <ul>
-                    <li>Landing Page</li>
-                    <li>Landing Page</li>
-                    <li>Landing Page</li>
-                    <li>Landing Page</li>
-                    <li>Landing Page</li>
-                </ul>
-            </div>
+            <SearchContainer />
         </div>
     </div>
 </template>
@@ -97,38 +85,6 @@
                 .search-text {
                     @apply text-slate-600 mb-5;
                 }
-            }
-
-            .search-input-section {
-                @apply flex justify-center gap-4 mb-5;
-                .keyword {
-                    @apply flex flex-col gap-2;
-                    .keyword-input {
-                        @apply w-96 px-5 py-2 bg-slate-100 rounded-lg text-sm;
-                    }
-                }
-        
-                .search-button {
-                    @apply flex items-end;
-                    .search-btn {
-                        @apply p-1.5;
-                    }
-                }
-            }
-        }
-
-        .search-results {
-            @apply px-10 mt-2;
-            li {
-                @apply border-t-0 border-2 border-slate-400 px-10 py-3;
-            }
-
-            li:first-child {
-                @apply border-t-2 border-slate-400 rounded-t-lg;
-            }
-        
-            li:last-child {
-                @apply rounded-b-lg;
             }
         }
     }
