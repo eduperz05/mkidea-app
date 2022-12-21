@@ -11,8 +11,8 @@
 </script>
 
 <template>
-    <div class="flex flex-col gap-4 bg-secondary-light py-2 px-5">
-        <div class="flex gap-4">
+    <div class="w-full flex flex-col gap-4 bg-secondary-light py-2 px-5">
+        <div class="w-full flex gap-4">
             <ProfileContainer />
             <ProfileInfoContainer />
         </div>
@@ -70,23 +70,6 @@
 </template>
 
 <style>
-    .profile-container {
-        @apply w-full h-[450px] flex flex-col items-center justify-center gap-2 bg-white border-2 border-slate-400 rounded-lg;
-        .image-container {
-            @apply rounded-full mb-6;
-            .profile-img {
-                @apply w-32 h-32 rounded-full border-2 border-secondary-light;
-            }
-        }
-
-        .name-surname {
-            @apply flex items-center justify-center gap-2 text-2xl font-bold text-secondary-dark;
-            .edit-icon {
-                @apply w-7;
-            }
-        }
-    }
-
     .social-media-container{
         @apply bg-white rounded-lg;
         .social-media {

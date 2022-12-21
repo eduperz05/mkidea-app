@@ -20,19 +20,36 @@
                 required: true
             }
         },
+        mounted() {
+            this.getLogin()
+            this.getUsers()
+        },
         methods: {
             async getLogin() {
-                const URL = "http://167.99.35.238:3000/auth/login"
+                const URL = "http://localhost:3000/auth/login"
                 console.log(await loginUser(URL, {
-                    username: "romer2",
+                    username: "romer3",
                     password: "Romer1234r"
                 }))
             },
-            async getUsers(){
-                console.log(await getUserInfo("http://167.99.35.238:3000/user"))
+            async getUsers(){ 
+                const user = await getUserInfo("http://localhost:3000/user/username/shincry", "GET")
+                const { firstname, lastname, role, about } = user
+                this.firstname = firstname
+                this.lastname = lastname
+                this.role = role
+                this.about = about
             },
             async getLogout(){
-                console.log(await getUserInfo("http://167.99.35.238:3000/auth/logout"))
+                console.log(await getUserInfo("http://localhost:3000/auth/logout", "POST"))
+            }
+        },
+        data() {
+            return {
+                firstname: this.firstname,
+                lastname: this.lastname,
+                role: this.role,
+                about: this.about
             }
         }
         
@@ -44,19 +61,16 @@
             <img src="/img/ppic.jpeg" alt="" class="profile-img">
         </div>
         <div class="name-surname">
-            <p>John Smith</p>
+            <p>{{ firstname }}{{ lastname }}</p>
             <a><img src="/img/edit.png" alt="edit icon" class="edit-icon"></a>
         </div>
-        <p>Profession</p>
-        <p>About you...</p>
-        <button @click="getLogin">Login</button>
-        <button @click="getUsers">Users</button>
-        <button @click="getLogout">Logout</button>
+        <p>{{role}}</p>
+        <p>{{about}}</p>
     </div>
 </template>
 <style lang="scss">
     .profile-container {
-        @apply w-full h-[450px] flex flex-col items-center justify-center gap-2 bg-white border-2 border-slate-400 rounded-lg;
+        @apply w-3/12 h-[450px] flex flex-col items-center justify-center gap-2 bg-white border-2 border-slate-400 rounded-lg;
         .image-container {
             @apply rounded-full mb-6;
             .profile-img {
