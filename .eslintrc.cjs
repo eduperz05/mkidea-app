@@ -4,9 +4,9 @@ module.exports = {
     es2021: true
   },
   extends: [
-    "@cowcoders/eslint-config/ts"
+    "@cowcoders/eslint-config/vue",
   ],
-  parser: "@typescript-eslint/parser",
+  parser: "vue-eslint-parser",
   parserOptions: {
     ecmaVersion: "latest",
     sourceType: "module"
@@ -18,6 +18,8 @@ module.exports = {
     quotes: ["error", "double"],
     semi: ["error", "always"],
     "comma-dangle": ["error", "only-multiline"],
-    "space-before-function-paren": ["error", "never"]
+    "space-before-function-paren": ["error", "never"],
+    "indent": "off",
+    "@typescript-eslint/indent": ["error", 2],
   }
 };

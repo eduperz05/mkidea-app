@@ -44,7 +44,7 @@ export default {
         .input-container {
             @apply relative;
             .search-input {
-                @apply w-60 py-1.5 px-10 bg-slate-100 rounded-lg;
+                @apply w-60 py-1.5 px-10 bg-slate-100 rounded-lg focus:outline-none;
             }
 
             .search-icon {
