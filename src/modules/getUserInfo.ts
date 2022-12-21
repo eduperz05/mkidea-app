@@ -24,9 +24,9 @@ export const logoutUser = async(url: string) => {
 }
 
 
-export const getUserInfo = async(url: string) => {
+export const getUserInfo = async(url: string, method: string) => {
     const response = await fetch(url, {
-        method: "GET",
+        method: method,
         credentials: "include",
         headers: {
             "Content-Type": "application/json",
