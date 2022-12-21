@@ -1,55 +1,12 @@
 <script lang="ts">
-    import { getUserInfo } from '@/modules/getUserInfo';
     export default {
-        name: 'ProfileContainer',
+        name: "ProfileContainer",
         props: {
-            firstname: {
-                type: String,
+            user: {
+                type: Object,
                 required: true
-            },
-            lastname: {
-                type: String,
-                required: true
-            },
-            email: {
-                type: String,
-                required: true
-            },
-            phone: {
-                type: String,
-                required: true
-            },
-            about: {
-                type: String,
-                required: true
-            }
-        },
-        mounted() {
-            this.getUser()
-        },
-        methods: {
-            async getUser() {
-                const users = await getUserInfo("http://localhost:3000/user/3", "GET")
-                users.map((user: any) => {
-                    const { firstname, lastname, about, phone, email } = user
-                    this.firstname = firstname
-                    this.lastname = lastname
-                    this.about = about
-                    this.phone = phone
-                    this.email = email
-                })
-            },
-        },
-        data() {
-            return {
-                firstname: this.firstname,
-                lastname: this.lastname,
-                email: this.email,
-                phone: this.phone,
-                about: this.about
             }
         }
-        
     };
 </script>
 
@@ -57,23 +14,23 @@
     <div class="profile-info-container">
         <div class="profile-info">
             <p><strong>First Name</strong></p>
-            <p>{{ firstname }}</p>
+            <p>{{ user.firstname }}</p>
         </div>
         <div class="profile-info">
             <p><strong>Last Name</strong></p>
-            <p>{{ lastname }}</p>
+            <p>{{ user.lastname }}</p>
         </div>
             <div class="profile-info">
             <p><strong>Email</strong></p>
-            <p>{{ email }}</p>
+            <p>{{ user.email }}</p>
         </div>
         <div class="profile-info">
             <p><strong>Phone Number</strong></p>
-            <p>{{ phone }}</p>
+            <p>{{ user.phone }}</p>
         </div>
         <div class="about-you">
             <p><strong>About You</strong></p>
-            <p class="text-justify">{{ about }}</p>
+            <p class="text-justify">{{ user.about }}</p>
         </div>
     </div>
 </template>

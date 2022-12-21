@@ -1,7 +1,18 @@
 <script lang="ts">
+    import type{ PropType } from 'vue';
+
     export default {
         name: 'ProjectsContainer',
         props: {
+            projects: {
+                type: Array as PropType<Array<{ 
+                    name: string,
+                    id_owner: string,
+                    updatedAt: string,
+                    status: string
+                }>>,
+                required: true,
+            },
         },  
     }; 
 </script>
@@ -9,40 +20,32 @@
 <template>
     <div class="table-columns">
         <div class="project-organization-column">
-            <router-link to="/project">Project 1</router-link>
-            <router-link to="/project">Project 2</router-link>
-            <router-link to="/project">Project 3</router-link>
-            <router-link to="/project">Project 4</router-link>
+            <router-link to="/project" v-for="project in projects">{{ project.name }}</router-link>
         </div>
         <div class="project-organization-column">
-            <p>Product Owner</p>
-            <p>Product Owner</p>
-            <p>Product Owner</p>
-            <p>Product Owner</p>
+            <p v-for="project in projects">{{ project.id_owner }}</p>
         </div>
         <div class="project-organization-column">
-            <p>--/--/--</p>
-            <p>--/--/--</p>
-            <p>--/--/--</p>
-            <p>--/--/--</p>
+            <p v-for="project in projects">{{ project.updatedAt }}</p>
         </div>
         <div class="project-organization-column">
-            <p><input type="checkbox" class="checkbox-item"></p>
-            <p><input type="checkbox" class="checkbox-item"></p>
-            <p><input type="checkbox" class="checkbox-item"></p>
-            <p><input type="checkbox" class="checkbox-item"></p>
+            <p class="checkbox-column-container" v-for="project in projects">
+                <div class="checkbox-container" v-if="project.status == 'active' || project.status == 'pending'"> 
+                    <input type="checkbox" class="checkbox-item">
+                </div>
+                <div class="checkbox-container" v-else>
+                    <input type="checkbox" class="checkbox-item" checked>
+                </div>
+            </p>
         </div>
         <div class="project-organization-column">
-            <a><img src="/img/bin.svg" alt="bin" class="bin-icon"></a>
-            <a><img src="/img/bin.svg" alt="bin" class="bin-icon"></a>
-            <a><img src="/img/bin.svg" alt="bin" class="bin-icon"></a>
-            <a><img src="/img/bin.svg" alt="bin" class="bin-icon"></a>
+            <a v-for="project in projects"><img src="/img/bin.svg" alt="bin" class="bin-icon"></a>
         </div>
     </div>
 </template>
 
 <style>
-    .table-columns {
+.table-columns {
         @apply grid grid-cols-5 text-center bg-white;
         .project-organization-column {
             @apply grid grid-cols-1;
@@ -61,7 +64,7 @@
         }
 
         .checkbox-item {
-            @apply scale-50 accent-primary;
+            @apply scale-125 accent-primary;
         }
 
         .bin-icon {

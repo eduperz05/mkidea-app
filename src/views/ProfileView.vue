@@ -1,20 +1,52 @@
 <script lang="ts">
     import ProfileContainer from "@/components/ProfileComponents/ProfileContainer.vue";
     import ProfileInfoContainer from "@/components/ProfileComponents/ProfileInfoContainer.vue";
+    import { getData, postData } from "@/modules/getUserInfo";
     export default {
         name: "ProfileView",
         components: {
             ProfileContainer,
             ProfileInfoContainer
         },
+        data() {
+            return {
+                user: {
+                    firstname: "",
+                    lastname: "",
+                    email: "",
+                    phone: "",
+                    about: "",
+                    role: "",
+                }
+            }
+        },
+        created() {
+            postData( import.meta.env.VITE_API_HOST + "/auth/login", {
+                username: "Judyxxx",
+                password: "J12345jj",
+            }).then(() => {
+                getData( import.meta.env.VITE_API_HOST + "/user/me").then((res) => {
+                    console.log(res);
+                    const newUser = {
+                        firstname: res.firstname,
+                        lastname: res.lastname,
+                        email: res.email,
+                        role: res.role,
+                        phone: res.phone,
+                        about: res.about
+                    }
+                    this.user = newUser;
+                });
+            });
+        }
     }
 </script>
 
 <template>
     <div class="w-full flex flex-col gap-4 bg-secondary-light py-2 px-5">
         <div class="w-full flex gap-4">
-            <ProfileContainer />
-            <ProfileInfoContainer />
+            <ProfileContainer :user="user" />
+            <ProfileInfoContainer :user="user" />
         </div>
         <div class="social-media-container">
             <div class="social-media">

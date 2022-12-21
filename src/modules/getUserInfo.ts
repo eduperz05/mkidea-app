@@ -1,4 +1,4 @@
-export const loginUser = async(url: string, data: any) => {
+export const postData = async(url: string, data: any) => {
     const response = await fetch(url, {
         method: "POST",
         credentials: "include",
@@ -11,9 +11,10 @@ export const loginUser = async(url: string, data: any) => {
     return result;
 }
 
-export const logoutUser = async(url: string) => {
+
+export const getData = async(url: string) => {
     const response = await fetch(url, {
-        method: "POST",
+        method: "GET",
         credentials: "include",
         headers: {
             "Content-Type": "application/json",
@@ -24,23 +25,14 @@ export const logoutUser = async(url: string) => {
 }
 
 
-export const getUserInfo = async(url: string, method: string) => {
+export const logoutUser = async(url: string) => {
     const response = await fetch(url, {
-        method: method,
+        method: "POST",
         credentials: "include",
         headers: {
             "Content-Type": "application/json",
         }
     });
-    const data = await response.json();
-    return data;
-    // return {
-    //     firstName: data.firstName,
-    //     lastName: data.lastName,
-    //     email: data.email,
-    //     avatar: data.avatar,
-    //     phone: data.phone,
-    //     role: data.role,
-    //     about: data.about
-    // }
+    const result = await response.json();
+    return result;
 }
