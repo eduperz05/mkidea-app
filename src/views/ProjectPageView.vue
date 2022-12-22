@@ -8,7 +8,18 @@
             ProjectMainContainer,
             ProjectDescContainer,
             ProjectMemberContainer,
-        }
+        },
+        data() {
+            return {
+                project: {
+                    name: "",
+                    description: "",
+                    status: "",
+                    tools: [],
+                    resources: []
+                },
+            }
+        },
     }
 </script>
 

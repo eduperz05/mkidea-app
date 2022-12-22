@@ -1,6 +1,19 @@
 <script lang="ts">
+import { postData } from '@/modules/fetchData';
 export default {
     name: "SidebarComponent",
+    methods: {
+        logOut() {
+            postData(import.meta.env.VITE_API_HOST + "/auth/logout", 
+                {}).then((data) => {
+                if (data.status === 200) {
+                    this.$router.push({ name: 'login' });
+                } else {
+                    alert("Could not log out.");
+                }
+                });
+        },
+    },
 }
 </script>
 
@@ -15,7 +28,7 @@ export default {
             </ul>
         </div>
         <div class="log-out">
-            <button class="log-out-button btn"><a href="">Log Out</a></button>
+            <button class="log-out-button btn" @click="logOut">Log Out</button>
         </div>
     </nav>
 </template>

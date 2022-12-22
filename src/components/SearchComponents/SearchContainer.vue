@@ -2,7 +2,11 @@
     export default {
         name: 'SearchContainer',
         props: {
-        },  
+            projects: {
+                type: Array,
+                required: true
+            }
+        }
     }; 
 
 </script>
@@ -17,12 +21,8 @@
             </div>
         </div>
     <div class="search-results">
-        <ul>
-            <li>Landing Page</li>
-            <li>Landing Page</li>
-            <li>Landing Page</li>
-            <li>Landing Page</li>
-            <li>Landing Page</li>
+        <ul id="some-projects">
+            <li v-for="project in projects">{{ project }}</li>
         </ul>
     </div> 
 </template>
@@ -52,7 +52,7 @@
     @apply px-10 mt-2;
 
     li {
-        @apply border-t-0 border-2 border-slate-400 px-10 py-3;
+        @apply flex items-center border-t-0 border-2 border-slate-400 px-10 min-h-[45px];
     }
 
     li:first-child {
