@@ -1,16 +1,13 @@
 <script lang="ts">
     import ProfileContainer from "@/components/ProfileComponents/ProfileContainer.vue";
     import ProfileInfoContainer from "@/components/ProfileComponents/ProfileInfoContainer.vue";
-    import { getData, postData } from "@/modules/fetchData";
+    import { getData } from "@/modules/fetchData";
     import { getRoles } from "@/modules/translateRoles";
     export default {
         name: "ProfileView",
         components: {
             ProfileContainer,
             ProfileInfoContainer
-        },
-        props: {
-            user: Object
         },
         data() {
             return {
@@ -26,7 +23,6 @@
         },
         created() {
             getData( import.meta.env.VITE_API_HOST + "/user/me").then((res) => {
-                console.log(res);
                 const newUser = {
                     firstname: res.firstname,
                     lastname: res.lastname,
