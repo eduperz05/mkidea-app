@@ -14,6 +14,12 @@ export default {
       postData(import.meta.env.VITE_API_HOST + "/auth/login", 
         { username: this.username, 
           password: this.password 
+        }).then((data) => {
+          if (data.status === 200) {
+            this.$router.push({ name: 'home' });
+          } else {
+            alert("Invalid username or password");
+          }
         });
     },
   },
@@ -48,7 +54,7 @@ export default {
             <label for="remember-me">Remember Me</label>
           </div>
           <div class="login-button-container">
-            <button v-on:click="" class="login-button btn">Log In</button>
+            <button v-on:click="login" class="login-button btn">Log In</button>
           </div>
           <div class="log-in-options">
             <span class="line"></span>

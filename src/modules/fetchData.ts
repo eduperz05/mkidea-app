@@ -7,8 +7,7 @@ export const postData = async(url: string, data: any) => {
         },
         body: JSON.stringify(data)
     });
-    const result = await response.json();
-    return result;
+    return response;
 }
 
 

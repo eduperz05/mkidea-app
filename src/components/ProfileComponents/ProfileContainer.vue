@@ -15,11 +15,11 @@
             <img src="/img/ppic.jpeg" alt="" class="profile-img">
         </div>
         <div class="name-surname">
-            <p>{{ user.firstname }}{{ user.lastname }}</p>
+            <p>{{ user.firstname }} {{ user.lastname }}</p>
             <a><img src="/img/edit.png" alt="edit icon" class="edit-icon"></a>
         </div>
         <p>{{ user.role }}</p>
-        <p>{{ user.about }}</p>
+        <p class="w-72 text-center">{{ user.about }}</p>
     </div>
 </template>
 <style lang="scss">

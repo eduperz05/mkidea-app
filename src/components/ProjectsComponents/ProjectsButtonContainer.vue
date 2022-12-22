@@ -1,9 +1,7 @@
 <script lang="ts">
     import "tw-elements";
     export default {
-        name: 'ProjectsButtonContainer',
-        props: {
-        },
+        name: 'ProjectsButtonContainer'
     };
 </script>
 

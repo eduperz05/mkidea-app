@@ -2,11 +2,15 @@
     import ProfileContainer from "@/components/ProfileComponents/ProfileContainer.vue";
     import ProfileInfoContainer from "@/components/ProfileComponents/ProfileInfoContainer.vue";
     import { getData, postData } from "@/modules/fetchData";
+    import { getRoles } from "@/modules/translateRoles";
     export default {
         name: "ProfileView",
         components: {
             ProfileContainer,
             ProfileInfoContainer
+        },
+        props: {
+            user: Object
         },
         data() {
             return {
@@ -21,22 +25,17 @@
             }
         },
         created() {
-            postData( import.meta.env.VITE_API_HOST + "/auth/login", {
-                username: "Judyxxx",
-                password: "J12345jj5",
-            }).then(() => {
-                getData( import.meta.env.VITE_API_HOST + "/user/me").then((res) => {
-                    console.log(res);
-                    const newUser = {
-                        firstname: res.firstname,
-                        lastname: res.lastname,
-                        email: res.email,
-                        role: res.role,
-                        phone: res.phone,
-                        about: res.about
-                    }
-                    this.user = newUser;
-                });
+            getData( import.meta.env.VITE_API_HOST + "/user/me").then((res) => {
+                console.log(res);
+                const newUser = {
+                    firstname: res.firstname,
+                    lastname: res.lastname,
+                    email: res.email,
+                    role: getRoles(res.role),
+                    phone: res.phone,
+                    about: res.about
+                }
+                this.user = newUser;
             });
         }
     }
