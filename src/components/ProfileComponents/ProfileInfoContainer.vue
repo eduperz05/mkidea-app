@@ -26,7 +26,7 @@
         </div>
         <div class="profile-info">
             <p><strong>Phone Number</strong></p>
-            <p>{{ user.phone }}</p>
+            <p>+34 {{ user.phone }}</p>
         </div>
         <div class="about-you">
             <p><strong>About You</strong></p>

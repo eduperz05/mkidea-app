@@ -93,7 +93,7 @@
                     <p>WhatsApp</p>
                 </div>
                 <div class="account">
-                    <p>+34666777420</p>
+                    <p>+34 {{ user.phone }}</p>
                 </div>
             </div>
         </div>

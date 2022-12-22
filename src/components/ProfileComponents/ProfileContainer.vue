@@ -19,7 +19,6 @@
             <a><img src="/img/edit.png" alt="edit icon" class="edit-icon"></a>
         </div>
         <p>{{ user.role }}</p>
-        <p class="w-72 text-center">{{ user.about }}</p>
     </div>
 </template>
 <style lang="scss">
