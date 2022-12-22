@@ -1,11 +1,12 @@
 <script lang="ts">
     import PasswordContainer from '@/components/PasswordComponents/PasswordContainer.vue';
+
     export default {
         name: "PasswordView",
         components: {
             PasswordContainer
-        }
-    }
+        },
+    };
 </script>
 
 <template>
@@ -18,7 +19,7 @@
                     <p>Enter the new password below to change your password.</p>
                 </div>
             </div>
-            <PasswordContainer />
+            <PasswordContainer  />
         </div>
     </div>
 </template>

@@ -1,0 +1,6 @@
+name: build frontend app container for production, push to Dockerhub & deploy to DigitalOcean droplet.
+
+on:
+  push:
+    branches:
+      - main

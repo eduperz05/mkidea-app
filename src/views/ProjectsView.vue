@@ -2,7 +2,7 @@
     import ProjectsEditContainer from "@/components/ProjectsComponents/ProjectsEditContainer.vue"
     import ProjectsButtonContainer from "@/components/ProjectsComponents/ProjectsButtonContainer.vue"
     import ProjectsContainer from '@/components/ProjectsComponents/ProjectsContainer.vue';
-    import { getData } from "@/modules/getUserInfo";
+    import { getData } from "@/modules/fetchData";
     export default {
         name: "ProjectsView",
         components: {
@@ -17,6 +17,7 @@
         },
         created() {
             getData( import.meta.env.VITE_API_HOST + "/project/owner/me").then((res) => {
+            console.log(res);
             const allProjects = res;
             console.log(allProjects);
             this.projects = allProjects.slice(0,8);

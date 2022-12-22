@@ -1,7 +1,7 @@
 <script lang="ts">
     import ProfileContainer from "@/components/ProfileComponents/ProfileContainer.vue";
     import ProfileInfoContainer from "@/components/ProfileComponents/ProfileInfoContainer.vue";
-    import { getData, postData } from "@/modules/getUserInfo";
+    import { getData, postData } from "@/modules/fetchData";
     export default {
         name: "ProfileView",
         components: {
@@ -23,7 +23,7 @@
         created() {
             postData( import.meta.env.VITE_API_HOST + "/auth/login", {
                 username: "Judyxxx",
-                password: "J12345jj",
+                password: "J12345jj5",
             }).then(() => {
                 getData( import.meta.env.VITE_API_HOST + "/user/me").then((res) => {
                     console.log(res);

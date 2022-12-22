@@ -1,6 +1,6 @@
 <script lang="ts">
     import SearchContainer from '@/components/SearchComponents/SearchContainer.vue';
-    import { getData } from "@/modules/getUserInfo";
+    import { getData } from "@/modules/fetchData";
     export default {
         name: "SearchIdeasView",
         components: {
@@ -80,7 +80,7 @@
                 }
 
                 .start-sub-text {
-                    @apply flex flex-col text-center leading-6 
+                    @apply flex flex-col text-center leading-6;
                 }
             }
 

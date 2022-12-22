@@ -6,6 +6,7 @@
         props: {
             projects: {
                 type: Array as PropType<Array<{ 
+                    id_project: string,
                     name: string,
                     id_owner: string,
                     updatedAt: string,
@@ -20,7 +21,11 @@
 <template>
     <div class="table-columns">
         <div class="project-organization-column">
-            <router-link to="/project" v-for="project in projects">{{ project.name }}</router-link>
+            <div v-for="project in projects">
+                <router-link :to="{ name: 'project', params: { id_project: project.id_project}}"> 
+                    {{ project.name }}
+                </router-link>
+            </div>
         </div>
         <div class="project-organization-column">
             <p v-for="project in projects">{{ project.id_owner }}</p>
@@ -63,8 +68,12 @@
             @apply grid py-3 border-b-2 border-slate-400;
         }
 
+        .project-organization-column div {
+            @apply grid;
+        }
+
         .checkbox-item {
-            @apply scale-125 accent-primary;
+            @apply scale-50 accent-primary;
         }
 
         .bin-icon {

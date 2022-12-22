@@ -36,3 +36,15 @@ export const logoutUser = async(url: string) => {
     const result = await response.json();
     return result;
 }
+
+export const patchData = async(url: string, data: any) => {
+    const response = await fetch(url, {
+        method: "PATCH",
+        credentials: "include",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data)
+    });
+    return response
+}
