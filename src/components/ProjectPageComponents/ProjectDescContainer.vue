@@ -1,7 +1,16 @@
 <script lang="ts">
-    export default {
-        name: 'ProjectDescContainer'
-    }; 
+export default {
+    name: 'ProjectDescContainer',
+    props: {
+        project: {
+            type: Object,
+            required: true,
+        }
+    },
+    mounted() {
+        console.log(this.project);
+    }
+}; 
 </script>
 
 <template>
@@ -15,7 +24,7 @@
 </template>
 
 <style>
-    .description-text {
-        @apply w-full flex items-center justify-center px-10;
-    }
+.description-text {
+    @apply w-full flex items-center justify-center px-10;
+}
 </style>
