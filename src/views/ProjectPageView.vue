@@ -12,14 +12,43 @@ export default {
     },
     data() {
         return {
-            project: {},
+            project: {
+                id_project: "",
+                name: "",
+                id_owner: "",
+                createdAt: "",
+                status: "",
+                description: "",
+            },
+            members: [""],
         }
     },
     mounted() {
         getData(import.meta.env.VITE_API_HOST + "/project/" + this.$route.params.id_project).then((res) => {
-            console.log(res);
-            this.project = res;
+            this.project = {
+                id_project: res.id_project,
+                name: res.name,
+                id_owner: res.id_owner,
+                createdAt: res.createdAt,
+                status: res.status,
+                description: res.description
+            }
+        }).then(() => {
+            getData(import.meta.env.VITE_API_HOST + "/public/user/" + this.project.id_owner).then((res) => {
+                this.project.id_owner = res.username;
+            });
+        }).then(() => {
+            getData(import.meta.env.VITE_API_HOST + "/team/project/" + this.project.id_project).then((res) => {
+                res.map((member: any) => {
+                    console.log(member);
+                    getData(import.meta.env.VITE_API_HOST + "/public/user/" + member.id_users).then((res) => {
+                        this.members.push(res);
+                    });
+                });
+            });
         });
+
+
     },
 }
 </script>
@@ -36,7 +65,7 @@ export default {
                         <h2>Project Name</h2>
                         <a><img src="/img/edit.png" alt="edit icon" class="edit-icon"></a>
                     </div>
-                    <ProjectMainContainer />
+                    <ProjectMainContainer :project="project" />
                 </div>
                 <div class="project-description-container">
                     <div class="description-title">
@@ -117,7 +146,7 @@ export default {
                         </div>
                     </div>
                 </div>
-                <ProjectMemberContainer />
+                <ProjectMemberContainer :members="members" />
             </div>
         </div>
     </div>
