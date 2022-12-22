@@ -1,8 +1,18 @@
 <script lang="ts">
+import { getData } from '@/modules/fetchData';
+import type{ PropType } from 'vue';
     export default {
         name: 'ProjectMemberContainer',
         props: {
-        }
+            members: {
+                type: Array as PropType<Array<{ 
+                    username: string,
+                    role: number,
+                    email: string,
+                }>>,
+                required: true,
+            }
+        },
     }; 
 </script>
 
@@ -20,16 +30,13 @@
             </div>
             <div class="members">
                 <div class="members-column">
-                    <p>John Smith</p>
-                    <p>Lucy Smith</p>
+                    <p v-for="member of members">{{member.username}}</p>
                 </div>
                 <div class="members-column">
-                    <p>FullStack</p>
-                    <p>Frontend</p>
+                    <p v-for="member of members">{{member.role}}</p>
                 </div>
                 <div class="members-column">
-                    <p>johnsmith@gmail.com</p>
-                    <p>lucysmith@gmail.com</p>
+                    <p v-for="member of members">{{member.email}}</p>
                 </div>
             </div>
         </div>

@@ -1,11 +1,23 @@
 <script lang="ts">
     import SearchContainer from '@/components/SearchComponents/SearchContainer.vue';
+    import { getData } from "@/modules/fetchData";
     export default {
         name: "SearchIdeasView",
         components: {
             SearchContainer
         },
+    data() {
+        return {
+            projects: [],
+        }
+    },
+    created() {
+        getData( import.meta.env.VITE_API_HOST + "/public/project").then((res) => {
+            const allProjects = res.map((project:any) => project.name);
+            this.projects = allProjects.slice(0,5);
+        });
     }
+}
 </script>
 
 <template>
@@ -43,7 +55,7 @@
                 <h1 class="search-title">Search for Ideas</h1>
                 <p class="search-text">Type a keyword to search for an idea related to it.</p>
             </div>
-            <SearchContainer />
+            <SearchContainer :projects="projects" />
         </div>
     </div>
 </template>
@@ -68,7 +80,7 @@
                 }
 
                 .start-sub-text {
-                    @apply flex flex-col text-center leading-6 
+                    @apply flex flex-col text-center leading-6;
                 }
             }
 

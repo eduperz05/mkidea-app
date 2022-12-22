@@ -2,13 +2,25 @@
     import ProjectsEditContainer from "@/components/ProjectsComponents/ProjectsEditContainer.vue"
     import ProjectsButtonContainer from "@/components/ProjectsComponents/ProjectsButtonContainer.vue"
     import ProjectsContainer from '@/components/ProjectsComponents/ProjectsContainer.vue';
+    import { getData } from "@/modules/fetchData";
     export default {
         name: "ProjectsView",
         components: {
             ProjectsEditContainer,
             ProjectsContainer,
             ProjectsButtonContainer,
-        }
+        },
+        data() {
+            return {
+                projects: []
+            }
+        },
+        created() {
+            getData( import.meta.env.VITE_API_HOST + "/project/owner/me").then((res) => {
+            const allProjects = res;
+            this.projects = allProjects.slice(0,8);
+            });
+        },
     }
 </script>
 
@@ -27,7 +39,7 @@
                     <p>Completed</p>
                     <p>Delete</p>
                 </div>
-                <ProjectsContainer/>
+                <ProjectsContainer :projects="projects"/>
                 <ProjectsButtonContainer/>
             </div>
         </div>

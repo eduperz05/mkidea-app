@@ -1,28 +1,54 @@
 <script lang="ts">
+    import { patchData } from '@/modules/fetchData';
     export default {
         name: 'PasswordContainer',
-        props: {
-        },  
-    }; 
-
+        data() {
+            return {
+                currentPassword: '',
+                newPassword: '',
+                confirmedNewPassword: '',
+            };
+        },
+        methods: {
+            savePassword() {
+                if (this.newPassword === this.confirmedNewPassword) {
+                    patchData(import.meta.env.VITE_API_HOST + "/user/changePassword/me", {
+                        password: {
+                            currentPassword: this.currentPassword,
+                            newPassword: this.newPassword,
+                        },
+                    }).then((res) => {
+                        if (res.status === 200) {
+                            alert('Password changed successfully');
+                        }
+                        else {
+                            alert('Password change failed');
+                        }
+                    });
+                } else {
+                    alert('Passwords do not match');
+                }
+            },
+        }
+    };
 </script>
 <template>
     <div class="change-password-content">
         <div class="password-inputs">
             <div class="current-password">
                 <label for="">Current Password</label>
-                <input type="text" placeholder="****************">
+                <input v-model="currentPassword" type="password" placeholder="****************">
             </div>
             <div class="new-password">
                 <label for="">New Password</label>
-                <input type="text" placeholder="****************">
+                <input v-model="newPassword" type="password" placeholder="****************">
             </div>
             <div class="confirm-new">
                 <label for="">Confirm New Password</label>
-                <input type="text" placeholder="****************">
+                <input v-model="confirmedNewPassword" type="password" placeholder="****************">
             </div>
             <div class="save-password-btn-container">
-                <button class="save-password-btn btn"><a href="">Save Password</a></button>
+                <button v-on:click="savePassword" class="save-password-btn btn"><a>Save Password</a></button>
             </div>
         </div>
         <div class="image-container">
@@ -49,7 +75,7 @@
         }
 
         .save-password-btn-container {
-            @apply flex items-center justify-center;
+            @apply flex items-center justify-center mt-8;
         .save-password-btn {
             @apply w-48;
         }

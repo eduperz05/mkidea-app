@@ -1,8 +1,6 @@
 <script lang="ts">
 export default {
-    name: 'ProjectsEditContainer',
-    props: {
-    },
+    name: 'ProjectsEditContainer'
 };
 </script>
 

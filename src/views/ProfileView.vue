@@ -1,20 +1,47 @@
 <script lang="ts">
     import ProfileContainer from "@/components/ProfileComponents/ProfileContainer.vue";
     import ProfileInfoContainer from "@/components/ProfileComponents/ProfileInfoContainer.vue";
+    import { getData } from "@/modules/fetchData";
+    import { getRoles } from "@/modules/translateRoles";
     export default {
         name: "ProfileView",
         components: {
             ProfileContainer,
             ProfileInfoContainer
         },
+        data() {
+            return {
+                user: {
+                    firstname: "",
+                    lastname: "",
+                    email: "",
+                    phone: "",
+                    about: "",
+                    role: "",
+                }
+            }
+        },
+        created() {
+            getData( import.meta.env.VITE_API_HOST + "/user/me").then((res) => {
+                const newUser = {
+                    firstname: res.firstname,
+                    lastname: res.lastname,
+                    email: res.email,
+                    role: getRoles(res.role),
+                    phone: res.phone,
+                    about: res.about
+                }
+                this.user = newUser;
+            });
+        }
     }
 </script>
 
 <template>
-    <div class="flex flex-col gap-4 bg-secondary-light py-2 px-5">
-        <div class="flex gap-4">
-            <ProfileContainer />
-            <ProfileInfoContainer />
+    <div class="w-full flex flex-col gap-4 bg-secondary-light py-2 px-5">
+        <div class="w-full flex gap-4">
+            <ProfileContainer :user="user" />
+            <ProfileInfoContainer :user="user" />
         </div>
         <div class="social-media-container">
             <div class="social-media">
@@ -62,7 +89,7 @@
                     <p>WhatsApp</p>
                 </div>
                 <div class="account">
-                    <p>+34666777420</p>
+                    <p>+34 {{ user.phone }}</p>
                 </div>
             </div>
         </div>
@@ -70,23 +97,6 @@
 </template>
 
 <style>
-    .profile-container {
-        @apply w-full h-[450px] flex flex-col items-center justify-center gap-2 bg-white border-2 border-slate-400 rounded-lg;
-        .image-container {
-            @apply rounded-full mb-6;
-            .profile-img {
-                @apply w-32 h-32 rounded-full border-2 border-secondary-light;
-            }
-        }
-
-        .name-surname {
-            @apply flex items-center justify-center gap-2 text-2xl font-bold text-secondary-dark;
-            .edit-icon {
-                @apply w-7;
-            }
-        }
-    }
-
     .social-media-container{
         @apply bg-white rounded-lg;
         .social-media {
