@@ -11,7 +11,7 @@ export default {
   },
   methods: {
     login() {
-      postData(import.meta.env.VITE_API_HOST + "/auth/login", 
+      postData("159.223.234.44:3000" + "/auth/login", 
         { username: this.username, 
           password: this.password 
         }).then((data) => {

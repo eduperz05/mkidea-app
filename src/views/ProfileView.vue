@@ -25,7 +25,7 @@
             }
         },
         created() {
-            getData( import.meta.env.VITE_API_HOST + "/user/me").then((res) => {
+            getData("159.223.234.44:3000" + "/user/me").then((res) => {
                 console.log(res);
                 const newUser = {
                     firstname: res.firstname,

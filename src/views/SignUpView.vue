@@ -12,7 +12,7 @@
         },
         methods: {
             signup() {
-                postData(import.meta.env.VITE_API_HOST + "/auth/register",
+                postData("159.223.234.44:3000" + "/auth/register",
                     {
                         username: this.username,
                         email: this.email,

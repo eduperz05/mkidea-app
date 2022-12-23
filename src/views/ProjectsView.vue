@@ -16,7 +16,7 @@
             }
         },
         created() {
-            getData( import.meta.env.VITE_API_HOST + "/project/owner/me").then((res) => {
+            getData("159.223.234.44:3000" + "/project/owner/me").then((res) => {
             console.log(res);
             const allProjects = res;
             console.log(allProjects);

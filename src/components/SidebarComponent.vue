@@ -4,7 +4,7 @@ export default {
     name: "SidebarComponent",
     methods: {
         logOut() {
-            postData(import.meta.env.VITE_API_HOST + "/auth/logout", 
+            postData("159.223.234.44:3000" + "/auth/logout", 
                 {}).then((data) => {
                 if (data.status === 200) {
                     this.$router.push({ name: 'login' });
