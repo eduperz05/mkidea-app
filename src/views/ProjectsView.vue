@@ -17,9 +17,7 @@
         },
         created() {
             getData("159.223.234.44:3000" + "/project/owner/me").then((res) => {
-            console.log(res);
             const allProjects = res;
-            console.log(allProjects);
             this.projects = allProjects.slice(0,8);
             });
         },

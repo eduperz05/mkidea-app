@@ -1,5 +1,4 @@
 <script lang="ts">
-import "tw-elements";
 import { postData } from '@/modules/fetchData';
 export default {
   name: 'LoginView',

@@ -7,6 +7,10 @@ module.exports = {
     "./src/**/*.{vue,js,ts,jsx,tsx}",
     './node_modules/tw-elements/dist/js/**/*.js'
   ],
+  purge: [
+    "./index.html",
+    "./src/**/*.{vue,js,ts,jsx,tsx}",
+  ],
   theme: {
     extend: {
       colors: {

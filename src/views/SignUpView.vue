@@ -1,5 +1,4 @@
 <script lang="ts">
-    import "tw-elements";
     import { postData } from '@/modules/fetchData';
     export default {
         name: 'SignUpView',
@@ -16,12 +15,13 @@
                     {
                         username: this.username,
                         email: this.email,
-                        password: this.password
+                        password: this.password,
+                        role: 4
                     }).then((data) => {
                         if (data.status === 200) {
                         this.$router.push({ name: 'home' });
                         } else {
-                            alert("Invalid username or password");
+                            alert("Invalid parameters");
                         }
                     });
             },
@@ -40,17 +40,17 @@
                     <h3 class="signup-title">Sign Up</h3>
                     <label for="username" class="username-text">Username*</label>
                     <div class="username-container">
-                        <input type="text" id="username" name="username" placeholder="Enter your Username">
+                        <input v-model="username" type="text" id="username" name="username" placeholder="Enter your Username">
                         <img class="user icon" src="/img/user-icon.svg">
                     </div>
                     <label for="email" class="email-text">Email*</label>
                     <div class="email-container">
-                        <input type="email" id="email" name="email" placeholder="name@email.com">
+                        <input  v-model="email"  type="email" id="email" name="email" placeholder="name@email.com">
                         <img class="user icon" src="/img/email-icon.svg">
                     </div>
                     <label for="password" class="password-text">Password*</label>
                     <div class="password-container">
-                        <input type="password" id="password" name="password" placeholder="Enter your Password">
+                        <input v-model="password" type="password" id="password" name="password" placeholder="Enter your Password">
                         <img class="password icon" src="/img/password-icon.svg">
                     </div>
                 </div>
@@ -77,18 +77,18 @@
 </template>
 
 <style lang="scss">
-.modal-container {
-        @apply modal fixed top-0 left-0 bg-primary-light w-full h-full outline-none;
-        .dialog-container {
-            @apply modal-dialog-centered relative w-auto pointer-events-none;
-            .dialog-content {
-                @apply container modal-content border-none shadow-lg relative flex flex-col w-96 pointer-events-auto bg-white bg-clip-padding rounded-2xl outline-none text-current p-12 gap-3 max-sm:w-[325px] max-sm:h-[650px] max-sm:m-auto max-sm:flex max-sm:justify-center;
-                .image-container {
-                    @apply flex justify-center;
-                    .logo {
-                        @apply w-14 max-sm:w-10;
-                    }
-                }
+    .modal-container {
+      @apply modal fixed top-0 left-0 bg-primary-light w-full h-full outline-none;
+      .dialog-container {
+        @apply modal-dialog-centered relative w-auto pointer-events-none;
+        .dialog-content {
+          @apply container modal-content border-none shadow-lg relative flex flex-col w-96 pointer-events-auto bg-white bg-clip-padding rounded-2xl outline-none text-current p-12 gap-3 max-sm:w-[325px] max-sm:h-[650px] max-sm:m-auto max-sm:flex max-sm:justify-center;
+          .image-container {
+            @apply flex justify-center;
+            .logo {
+              @apply w-14 max-sm:w-10;
+            }
+          }
 
                 .signup-content {
                     @apply flex flex-col gap-3;
