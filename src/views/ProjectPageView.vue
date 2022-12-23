@@ -20,7 +20,13 @@ export default {
                 status: "",
                 description: "",
             },
-            members: [""],
+            members: [
+                {
+                    username: "",
+                    role: 0,
+                    email: "",
+                }
+            ],
         }
     },
     mounted() {
@@ -39,6 +45,7 @@ export default {
             });
         }).then(() => {
             getData(import.meta.env.VITE_API_HOST + "/team/project/" + this.project.id_project).then((res) => {
+                this.members.pop();
                 res.map((member: any) => {
                     console.log(member);
                     getData(import.meta.env.VITE_API_HOST + "/public/user/" + member.id_users).then((res) => {
