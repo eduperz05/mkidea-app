@@ -16,7 +16,7 @@
             }
         },
         created() {
-            getData("159.223.234.44:3000" + "/project/owner/me").then((res) => {
+            getData("api.mkidea.tech" + "/project/owner/me").then((res) => {
             const allProjects = res;
             this.projects = allProjects.slice(0,8);
             });

@@ -22,7 +22,7 @@
             }
         },
         created() {
-            getData("159.223.234.44:3000" + "/user/me").then((res) => {
+            getData("api.mkidea.tech" + "/user/me").then((res) => {
                 const newUser = {
                     firstname: res.firstname,
                     lastname: res.lastname,

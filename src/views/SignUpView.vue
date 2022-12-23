@@ -11,7 +11,7 @@
         },
         methods: {
             signup() {
-                postData("159.223.234.44:3000" + "/auth/register",
+                postData("api.mkidea.tech" + "/auth/register",
                     {
                         username: this.username,
                         email: this.email,

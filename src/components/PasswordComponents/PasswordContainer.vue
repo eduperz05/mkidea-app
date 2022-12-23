@@ -12,7 +12,7 @@
         methods: {
             savePassword() {
                 if (this.newPassword === this.confirmedNewPassword) {
-                    patchData("159.223.234.44:3000" + "/user/changePassword/me", {
+                    patchData("api.mkidea.tech" + "/user/changePassword/me", {
                         password: {
                             currentPassword: this.currentPassword,
                             newPassword: this.newPassword,

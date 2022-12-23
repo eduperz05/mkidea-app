@@ -10,7 +10,7 @@ export default {
   },
   methods: {
     login() {
-      postData("159.223.234.44:3000" + "/auth/login", 
+      postData("api.mkidea.tech" + "/auth/login", 
         { username: this.username, 
           password: this.password 
         }).then((data) => {
