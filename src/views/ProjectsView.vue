@@ -16,7 +16,7 @@
             }
         },
         created() {
-            getData( import.meta.env.VITE_API_HOST + "/project/owner/me").then((res) => {
+            getData( import.meta.env.VITE_API_HOST + "/team/user/me").then((res) => {
             const allProjects = res;
             this.projects = allProjects.slice(0,8);
             });
