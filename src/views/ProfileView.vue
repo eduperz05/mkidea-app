@@ -22,7 +22,7 @@
             }
         },
         created() {
-            getData( import.meta.env.VITE_API_HOST + "/user/me").then((res) => {
+            getData("api.mkidea.tech" + "/user/me").then((res) => {
                 const newUser = {
                     firstname: res.firstname,
                     lastname: res.lastname,

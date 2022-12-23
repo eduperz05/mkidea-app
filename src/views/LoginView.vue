@@ -10,7 +10,7 @@ export default {
   },
   methods: {
     login() {
-      postData(import.meta.env.VITE_API_HOST + "/auth/login", 
+      postData("api.mkidea.tech" + "/auth/login", 
         { username: this.username, 
           password: this.password 
         }).then((data) => {

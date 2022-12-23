@@ -11,7 +11,7 @@
         },
         methods: {
             signup() {
-                postData(import.meta.env.VITE_API_HOST + "/auth/register",
+                postData("api.mkidea.tech" + "/auth/register",
                     {
                         username: this.username,
                         email: this.email,

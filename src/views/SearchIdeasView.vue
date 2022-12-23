@@ -12,7 +12,7 @@
         }
     },
     created() {
-        getData( import.meta.env.VITE_API_HOST + "/public/project").then((res) => {
+        getData("159.223.234.44:3000" + "/public/project").then((res) => {
             const allProjects = res.map((project:any) => project.name);
             this.projects = allProjects.slice(0,5);
         });

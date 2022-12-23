@@ -12,7 +12,7 @@
         methods: {
             savePassword() {
                 if (this.newPassword === this.confirmedNewPassword) {
-                    patchData(import.meta.env.VITE_API_HOST + "/user/changePassword/me", {
+                    patchData("api.mkidea.tech" + "/user/changePassword/me", {
                         password: {
                             currentPassword: this.currentPassword,
                             newPassword: this.newPassword,
